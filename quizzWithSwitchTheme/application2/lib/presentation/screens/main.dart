@@ -1,8 +1,5 @@
 // ignore_for_file: void_checks
 
-
-import 'package:application2/business_logic/MyTheme.dart';
-import 'package:application2/config.dart';
 import 'package:application2/data/dataProviders/question_api.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -201,15 +198,16 @@ class _QuizPageState extends State<QuizPage> {
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
-            child: ElevatedButton(
-              onPressed: () {
-                context.read<CheckCubit>().switchTheme();
-              },
-              child: Column( // Replace with a Row for horizontal icon + text
+            child: Switch(
+              onChanged: (value) {
+                 context.read<CheckCubit>().switchTheme();
+              }, value:  context.read<CheckCubit>().value(),
+
+      /*        child: Column( // Replace with a Row for horizontal icon + text
                 children: <Widget>[
                   Text("Switch Theme")
                 ],
-              ),
+              ),*/
             ),
           ),
         ),

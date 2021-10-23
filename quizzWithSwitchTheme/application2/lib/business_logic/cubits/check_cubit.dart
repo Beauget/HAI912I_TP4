@@ -65,4 +65,8 @@ class CheckCubit extends Cubit<CheckState> {
     _isDark = !_isDark;
     emit(CheckInitial(questionNumber, score,themeMode));
   }
+
+  bool value() {
+    return _isDark;
+  }
 }
