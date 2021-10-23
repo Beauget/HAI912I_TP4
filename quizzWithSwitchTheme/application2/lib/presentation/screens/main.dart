@@ -202,15 +202,9 @@ class _QuizPageState extends State<QuizPage> {
               onChanged: (value) {
                  context.read<CheckCubit>().switchTheme();
               }, value:  context.read<CheckCubit>().value(),
-
-      /*        child: Column( // Replace with a Row for horizontal icon + text
-                children: <Widget>[
-                  Text("Switch Theme")
-                ],
-              ),*/
+              ),
             ),
           ),
-        ),
       ],
     );
   }
